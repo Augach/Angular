@@ -1,0 +1,16 @@
+
+<div>
+    <textarea
+        [maxlength]="limit"
+        class="form-control"
+        placeholder="Saisir votre texte"
+        [(ngModel)]="text" ></textarea>
+
+    <button (click)="sendMessage()">Send</button>
+
+    <p [style.color]="text.length >= limit ? 'red' : '' " >
+        Nombre de caractères: {{ text.length }}
+    </p>
+
+    <p>{{text}}</p>
+</div>

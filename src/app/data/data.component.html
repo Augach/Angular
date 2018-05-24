@@ -1,0 +1,29 @@
+<div class="container">
+  <input type="text" (input)="changeName($event)">
+  <!-- avec (input) on emet un evenement mais sans etre à l'ecoute du changement -->
+
+  {{ name }}
+
+  <br/>
+
+  <input type="text" [(ngModel)]="name" >
+  <!-- avec [(ngModel)] on emet un changement mais peut aussi recuperer les changements -->
+  <!-- en general plutot preferer passer par le ngModel -->
+
+  {{ name }}
+
+  <hr/>
+
+  <form (submit)="addTask()">
+    <input type="text" name="task" [(ngModel)]="task.text" />
+  </form>
+
+  <ul>
+    <li (click)="task.done=!task.done"
+      *ngFor="let task of tasks"
+      [ngClass]="{'task-done': task.done}">
+      {{ task.title }}
+    </li>
+  </ul>
+
+</div>

@@ -1,0 +1,28 @@
+<div style="text-align:center">
+  <app-aston></app-aston>
+  <app-aston></app-aston>
+  <app-messagecorr (response)="getText($event)" text="Hello, World" limit="20"></app-messagecorr>
+  <!-- response est un evenement donc on le met entre () -->
+  <app-messagecorr text="Hello, John" limit="10"></app-messagecorr>
+
+  
+  <h1>
+    Welcome to {{ title }} {{name}}!
+  </h1>
+
+  <h2>
+    {{sayHello() }}
+  </h2>
+
+  <input type="text" [(ngModel)]= "email"> {{email}}
+
+  <app-message></app-message>
+
+  <app-messagecorr></app-messagecorr>
+
+  <hr/>
+
+  <app-data></app-data>
+
+
+</div>
